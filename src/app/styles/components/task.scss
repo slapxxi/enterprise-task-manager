@@ -1,0 +1,88 @@
+@layer components {
+  .tasks {
+    @include radius;
+    display: grid;
+    gap: 8px;
+    padding: space(2) space(7) space(2) space(2);
+    border: 1px solid $c-tasks-border;
+    background-color: $c-tasks-bg;
+  }
+
+  .task {
+    @include radius(sm);
+    display: grid;
+    gap: space(2);
+    height: 100%;
+    padding: space(2) space(7) space(2) space(2);
+    border: 1px solid $c-task-border;
+    background-color: $c-task-bg;
+    color: $c-task;
+
+    &-container {
+      display: flex;
+      gap: space(3);
+    }
+
+    &-content {
+      display: grid;
+      gap: space(1);
+      flex: 1;
+      align-self: center;
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      line-height: 12px;
+      color: $c-task-footer;
+    }
+
+    &-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    &-deadline {
+      font-weight: 600;
+    }
+
+    &-deadline[data-expired="true"] {
+      color: $c-task-expired;
+    }
+
+    &-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    &-group {
+      display: flex;
+      align-items: center;
+      gap: space(1);
+      margin-left: auto;
+    }
+
+    &-form {
+      padding: space(3);
+    }
+  }
+
+  .task[data-drag="dragging"] {
+    box-shadow: 1px 1px 8px $c-task-shadow;
+  }
+
+  .task[data-drop="true"] {
+    border-color: $c-task-border-active;
+  }
+
+  .task[data-expired="true"] {
+    border-color: $c-task-border-expired;
+  }
+}

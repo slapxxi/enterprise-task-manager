@@ -1,0 +1,62 @@
+@layer components {
+  .board {
+    @include radius(lg);
+    display: grid;
+    align-content: start;
+    gap: 8px;
+    max-width: 1024px;
+    min-height: calc(100vh - 16px);
+    max-height: calc(100vh - 16px);
+    padding: 8px;
+    border: 2px solid $c-board-border;
+    margin: 8px auto;
+    background-color: $c-board-bg;
+    color: $c-board;
+
+    &-title {
+      position: sticky;
+      top: 0;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+
+    &-header {
+      display: flex;
+      gap: space(2);
+      align-items: center;
+    }
+
+    &-group {
+      margin-left: auto;
+    }
+
+    &-seed {
+      padding: 0;
+    }
+
+    &-search {
+      margin-left: auto;
+      flex: 1;
+    }
+
+    &-list {
+      display: grid;
+      gap: space(4);
+      height: calc(100vh - 292px);
+      overflow: auto;
+
+      &-inner {
+        position: relative;
+        width: 100%;
+      }
+
+      &-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}

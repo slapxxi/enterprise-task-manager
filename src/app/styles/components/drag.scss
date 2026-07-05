@@ -1,0 +1,38 @@
+@layer components {
+  .drag {
+    position: relative;
+  }
+
+  .drag[data-drag="dragging"] {
+    user-select: none;
+  }
+
+  .drag[data-drag="dragging.active"] {
+    filter: url(#gray);
+    pointer-events: none;
+  }
+
+  .drag[data-drop="true"] {
+    filter: hue-rotate(20deg) brightness(90%) url(#inset-shadow);
+  }
+
+  .drag-handle {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    cursor: grab;
+    opacity: 0.8;
+    line-height: 0;
+    transform: translateY(-50%);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .drag-icon {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+}

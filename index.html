@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <svg style="width: 1; height: 1; position: absolute; pointer-events: none; opacity: 0">
+      <defs>
+        <filter id="gray">
+          <feFlood flood-color="gray" flood-opacity="0.15" />
+          <feComposite in="SourceAlpha" operator="in" />
+        </filter>
+        <filter id="green-outline" x="-50%" y="-50%" width="200%" height="200%">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="6" />
+          <feGaussianBlur in="expanded" stdDeviation="1" result="blurred" />
+          <feFlood flood-color="yellowgreen" flood-opacity="1" result="redColor" />
+          <feComposite in="redColor" in2="blurred" operator="in" result="redBlur" />
+          <feComposite in="SourceGraphic" in2="redBlur" operator="over" />
+        </filter>
+        <filter id="red-outline" x="-50%" y="-50%" width="200%" height="200%">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="3" />
+          <feGaussianBlur in="expanded" stdDeviation="1" result="blurred" />
+          <feFlood flood-color="crimson" flood-opacity="1" result="redColor" />
+          <feComposite in="redColor" in2="blurred" operator="in" result="redBlur" />
+          <feComposite in="SourceGraphic" in2="redBlur" operator="over" />
+        </filter>
+        <filter id="inset-shadow" width="100%" height="100%" x="0" y="0">
+          <feFlood flood-color="black" />
+          <feComposite in="SourceAlpha" operator="in" result="outer" />
+          <feMorphology operator="erode" radius="2" result="inner" />
+          <feComposite in="outer" in2="inner" operator="out" />
+          <feGaussianBlur stdDeviation="3" />
+          <feComposite in2="SourceGraphic" operator="in" result="shadow" />
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="shadow" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

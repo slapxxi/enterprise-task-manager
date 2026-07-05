@@ -1,0 +1,31 @@
+$c-white: #ffffff;
+$c-black: #000000;
+
+$c-gray-50: #f5f5f5;
+$c-gray-400: #b9b9b9;
+$c-gray-500: #d9d9d9;
+$c-gray-600: #a9a9a9;
+$c-gray-800: #525252;
+
+$c-red-800: #dc143c;
+
+// generic
+$c-bg: $c-white;
+
+// components
+$c-board: $c-gray-800;
+$c-board-bg: $c-gray-50;
+$c-board-border: $c-gray-500;
+
+$c-tasks: $c-black;
+$c-tasks-bg: $c-gray-50;
+$c-tasks-border: $c-gray-400;
+
+$c-task: $c-black;
+$c-task-expired: $c-red-800;
+$c-task-bg: $c-white;
+$c-task-border: $c-gray-400;
+$c-task-border-active: $c-red-800;
+$c-task-border-expired: $c-red-800;
+$c-task-footer: $c-gray-800;
+$c-task-shadow: rgba($c-black, 0.2);
