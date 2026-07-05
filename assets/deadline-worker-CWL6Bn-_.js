@@ -1,0 +1,2 @@
+(function(){"use strict";let n={};addEventListener("message",({data:e})=>{const{type:t,payload:s}=e;switch(t){case"deadlines-replace":n={},Object.entries(s).forEach(([a,d])=>{n[a]=d});break}}),addEventListener("unload",()=>{clearInterval(r)});const r=setInterval(()=>{const e={};let t=0;Object.entries(n).forEach(([s,a])=>{new Date(a)<Date.now()&&(e[s]=a,t+=1)}),t!==0&&postMessage({type:"deadlines-expired",payload:e})},2e3)})();
+//# sourceMappingURL=deadline-worker-CWL6Bn-_.js.map
